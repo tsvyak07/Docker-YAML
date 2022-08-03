@@ -9,11 +9,12 @@ services:
     image: app:maven
     container_name: maven_builder
 
-  web:
-   image: tomcat:latest
-   ports:
-      - 8787:80
-   volumes:
-    - ./tmp:/opt/tomcat/webapps
+  webbox:
+    image: tomcat
+    volumes:
+      -./tmp/hello-1.0.war:/opt/tomcat/webapps/hello-1.0.war
+    ports:
+      - 8082:8080
+
 
 
