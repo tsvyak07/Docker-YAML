@@ -8,4 +8,10 @@ services:
       - 8000:8000
     image: app:maven
     container_name: maven_builder
+  web: tomcat:latest
+  ports:
+    - "8000:80"
+  volumes:
+    - ./tmp:/opt/tomcat/webapps
+
 
