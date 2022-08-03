@@ -13,7 +13,7 @@ services:
     container_name: tomcat
     volumes:
       - app-volume:/usr/local/tomcat
-      - ./opt/tomcat/webapps:/usr/local/tomcat
+      - ./opt/tomcat/webapps:/usr/local/tomcat/webapps
     ports:
       - 8083:8080
 
