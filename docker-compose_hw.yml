@@ -9,15 +9,13 @@ services:
       - 8082:8080
   tomcat:
     restart: always
-    image: tomcat:9
+    image: tomcat:9-alpine
     container_name: tomcat
     volumes:
       - app-volume:/opt/tomcat/webapps
     ports:
       - 8083:8080
-    environment:
 
-      TZ: Asia/Aqtau
 volumes:
   app-volume:
 
