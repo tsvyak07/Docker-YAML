@@ -1,23 +1,22 @@
----
 version: "2"
 services:
   webservices:
     image: nginx:latest
     links:
-      -php
+      - php
     ports:
-      -"8080:80"
+      - "8888:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     volumes_from:
-      -php
+      - php
   php:
     build: php-7.0-fpm-custom
     environment:
       - TYPO3_CONTEXT=Development/Docker
     links:
-      -db
-      -redis
+      - db
+      - redis
     volumes:
       - ./htdocs:/var/www/html
   db:
