@@ -3,7 +3,7 @@ services:
   app:
     build: .
     volumes:
-      - ./tmp:/tmp
+      -   shared-data:/tmp
     ports:
       - 8000:8000
     image: app:maven
@@ -17,4 +17,5 @@ services:
       - 8082:8080
 
 
-
+volumes:
+  shared-data:
