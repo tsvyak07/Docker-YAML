@@ -12,7 +12,8 @@ services:
     image: tomcat:9-alpine
     container_name: tomcat
     volumes:
-      - app-volume:/opt/tomcat/webapps
+      - app-volume:/usr/local/tomcat
+      - ./opt/tomcat/webapps:/usr/local/tomcat
     ports:
       - 8083:8080
 
