@@ -1,5 +1,11 @@
-version: "3.9"  # optional since v1.27.0
+version: "3.9"
 services:
   app:
     build: .
     volumes:
+      - .:/tmp
+    ports:
+      - 8000:8000
+    image: app:maven
+    container_name: maven_builder
+
