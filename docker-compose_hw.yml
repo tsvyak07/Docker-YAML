@@ -9,7 +9,7 @@ services:
     image: app:maven
     container_name: maven_builder
 
-  webbox:
+  web-box:
     image: tomcat
     volumes:
       -./tmp/hello-1.0.war:/opt/tomcat/webapps/hello-1.0.war
